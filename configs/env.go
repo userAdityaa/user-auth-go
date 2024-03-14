@@ -14,3 +14,11 @@ func EnvMongoURL() string {
 
 	return os.Getenv("MONGO_URI")
 }
+
+func EnvSecretKey() string {
+	if err := godotenv.Load(".env"); err != nil {
+		log.Fatal(err)
+	}
+
+	return os.Getenv("SECRET_KEY")
+}
